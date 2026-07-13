@@ -16,13 +16,12 @@ import java.io.IOException;
 )
 public class RunCucumberTest extends SeleniumWebDriver {
     @BeforeClass
-    public static void initDriver() throws IOException,InterruptedException{
-        initChrome();
-        driver.manage().window().maximize();
-    }
-    @AfterClass
-    public static void tearDown(){
-        closeDriver();
+    public static void  initDrivers() {
+        initDriver();
     }
 
+    @AfterClass
+    public static void tearDown() {
+        closeDriver();
+    }
 }
