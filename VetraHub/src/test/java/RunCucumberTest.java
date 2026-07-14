@@ -23,6 +23,6 @@ public class RunCucumberTest extends SeleniumWebDriver {
 
     @AfterClass
     public static void tearDown() {
-        closeDriver();
+       // closeDriver();
     }
 }

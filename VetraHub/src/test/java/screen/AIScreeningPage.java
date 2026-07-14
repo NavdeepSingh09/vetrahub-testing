@@ -26,6 +26,19 @@ public class AIScreeningPage extends SeleniumWebDriver {
         assertTrue(label().getText().contains("AI SCREENING & EVALUATION"));
     }
 
+    public static void clickGetStartedButton() throws InterruptedException {
+        getStartedFreeButton().click();
+    }
+
+    public static void navigateBackToAIScreening() throws InterruptedException {
+        driver.navigate().back();
+    }
+
+    public static void clickOnBookDemo() throws InterruptedException {
+        bookADemoButton().click();
+    }
+
+
     //WebElements
     public static WebElement forEmployersButton() {
         return driver.findElement(By.xpath("//*[@id=\"root\"]/div/header/div/nav/div[1]/div[2]/button"));
@@ -38,5 +51,14 @@ public class AIScreeningPage extends SeleniumWebDriver {
     public static WebElement label() {
         return driver.findElement(By.xpath("//*[@id=\"root\"]/div/main/section[1]/div[2]/div[1]/div[1]"));
     }
+
+    public static WebElement getStartedFreeButton() {
+        return driver.findElement(By.xpath("//*[@id=\"root\"]/div/main/section[1]/div[2]/div[1]/div[2]/a[1]"));
+    }
+
+    public static WebElement bookADemoButton() {
+        return driver.findElement(By.xpath("//*[@id=\"root\"]/div/main/section[1]/div[2]/div[1]/div[2]/a[2]"));
+    }
+
 
 }
