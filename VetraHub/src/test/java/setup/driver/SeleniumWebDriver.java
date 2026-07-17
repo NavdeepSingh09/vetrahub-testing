@@ -9,17 +9,20 @@ import java.io.IOException;
 
 public class SeleniumWebDriver extends CommonConfig {
     public static WebDriver driver;
-    public static WebDriver initChrome() throws IOException {
-        System.setProperty("webdriver.edge.driver", "C:\\edgedriver\\msedgedriver.exe");//path of your driver
-        //System.setProperty("webdriver.chrome.driver",chromePath());
+    public static WebDriver initDriver()
+    {
+        System.setProperty("webdriver.edge.driver", "C:\\edgedriver\\msedgedriver.exe");
         driver = new EdgeDriver();
         return driver;
     }
+
     public static void closeDriver() {
-        //driver.quit();
         driver.close();
     }
+
     public static WebDriver getWebDriver() {
         return driver;
     }
+
 }
+
