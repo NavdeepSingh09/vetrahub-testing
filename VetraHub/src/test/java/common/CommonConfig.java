@@ -10,7 +10,7 @@ public class CommonConfig {
         InputStream input = new FileInputStream("src/test/resources/CommonProperties.properties");
         Properties prop = new Properties();
         prop.load(input);
-        return prop.getProperty("chrome.driver.path");
+        return prop.getProperty("edge.driver.path");
 
     }
 }
