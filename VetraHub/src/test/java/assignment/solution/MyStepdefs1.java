@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import screen.AIScreeningPage;
 import screen.BookDemoPage;
+import screen.InterviewIntegrity;
 import screen.SignupPage;
 
 
@@ -60,5 +61,42 @@ public class MyStepdefs1 {
         BookDemoPage.verifyBookDemoTitle();
     }
 
+    @Given("the user navigates back to AI Screening Page from BookDemo")
+    public void navigateBackToAIScreeningPAge() throws InterruptedException {
+        AIScreeningPage.navigateBack();
+    }
+
+    @When("the user scrolls down to the Interview Integrity Section")
+    public void scrollDown() throws InterruptedException {
+        AIScreeningPage.scrollDown();
+    }
+
+    @And("The user clicks on Interview Integrity")
+    public void clickOnInterviewIntegrity() throws InterruptedException {
+        AIScreeningPage.clickOnInterviewIntegrity();
+    }
+
+    @Then("The user verifies the page title")
+    public void verifyPageTitle() throws InterruptedException {
+        InterviewIntegrity.verifyPageTitle();
+    }
+
+    @Given("the user navigates back to AI Screening Page from Interview")
+    public void navigateBackFromInterview() throws InterruptedException {
+        AIScreeningPage.navigateBackFromInterview();
+    }
+
+    @When("the user scrolls down to Lean Teams section")
+    public void scrollIntoLeanTeams() throws InterruptedException {
+        AIScreeningPage.scrollIntoLeanTeams();
+    }
+
+    @Then("Lean Teams section should be displayed")
+    public void leanTeamsIsDisplayed() throws InterruptedException {
+        AIScreeningPage.leanTeamsIsDisplayed();
+    }
 
 }
+
+
+
