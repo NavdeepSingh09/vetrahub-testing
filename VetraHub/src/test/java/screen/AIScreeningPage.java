@@ -2,6 +2,7 @@ package screen;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import setup.driver.SeleniumWebDriver;
 
@@ -11,7 +12,6 @@ public class AIScreeningPage extends SeleniumWebDriver {
 
     public static void GetNavigateVetraHub() throws InterruptedException {
         getWebDriver().get("https://vetrahub.com/");
-        Thread.sleep(5000);
     }
 
     public static void clickForEmployers() throws InterruptedException {
@@ -38,6 +38,31 @@ public class AIScreeningPage extends SeleniumWebDriver {
         bookADemoButton().click();
     }
 
+    public static void navigateBack() throws InterruptedException {
+        driver.navigate().back();
+    }
+
+    public static void scrollDown() throws InterruptedException {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,4500);");
+    }
+
+    public static void clickOnInterviewIntegrity() throws InterruptedException {
+        driver.findElement(By.xpath("//a[contains(@href, 'video-interviews')]")).click();
+    }
+
+    public static void navigateBackFromInterview() throws InterruptedException {
+        driver.navigate().back();
+    }
+
+    public static void scrollIntoLeanTeams() throws InterruptedException {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,4000);");
+    }
+
+    public static void leanTeamsIsDisplayed() throws InterruptedException {
+        assertTrue(leanTeams().isDisplayed());
+    }
 
     //WebElements
     public static WebElement forEmployersButton() {
@@ -58,6 +83,10 @@ public class AIScreeningPage extends SeleniumWebDriver {
 
     public static WebElement bookADemoButton() {
         return driver.findElement(By.xpath("//*[@id=\"root\"]/div/main/section[1]/div[2]/div[1]/div[2]/a[2]"));
+    }
+
+    public static WebElement leanTeams() {
+        return driver.findElement(By.xpath("//*[@id=\"root\"]/div/main/section[4]/div[2]/div[2]"));
     }
 
 
