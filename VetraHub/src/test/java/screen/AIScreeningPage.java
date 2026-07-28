@@ -64,6 +64,19 @@ public class AIScreeningPage extends SeleniumWebDriver {
         assertTrue(leanTeams().isDisplayed());
     }
 
+    public static void userOnAIScreeningPage() throws InterruptedException{
+        driver.navigate().refresh();
+    }
+
+    public static void scrollDownToFooter()throws InterruptedException{
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+    }
+
+    public static void verifyFooter()throws InterruptedException{
+        assertTrue(footer().isDisplayed());
+    }
+
     //WebElements
     public static WebElement forEmployersButton() {
         return driver.findElement(By.xpath("//*[@id=\"root\"]/div/header/div/nav/div[1]/div[2]/button"));
@@ -87,6 +100,10 @@ public class AIScreeningPage extends SeleniumWebDriver {
 
     public static WebElement leanTeams() {
         return driver.findElement(By.xpath("//*[@id=\"root\"]/div/main/section[4]/div[2]/div[2]"));
+    }
+
+    public static WebElement footer(){
+        return driver.findElement(By.xpath("//footer//span[contains(@class,'font-mono')]"));
     }
 
 

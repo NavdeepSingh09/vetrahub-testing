@@ -27,3 +27,8 @@ Feature: AI Screening Landing Page
     Given the user navigates back to AI Screening Page from Interview
     When the user scrolls down to Lean Teams section
     Then Lean Teams section should be displayed
+
+  Scenario: Verify website footer
+    Given the user in on AIScreening Page
+    When the user scroll down to the footer
+    Then the footer  © 2026 should be displayed

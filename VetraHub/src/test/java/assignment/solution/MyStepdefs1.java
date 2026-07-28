@@ -96,6 +96,21 @@ public class MyStepdefs1 {
         AIScreeningPage.leanTeamsIsDisplayed();
     }
 
+    @Given("the user in on AIScreening Page")
+    public void userIsOnAIScreeningPage() throws InterruptedException {
+        AIScreeningPage.userOnAIScreeningPage();
+    }
+
+    @When("the user scroll down to the footer")
+    public void scrollDownToFooter()throws InterruptedException{
+        AIScreeningPage.scrollDownToFooter();
+    }
+
+    @Then("the footer  © 2026 should be displayed")
+    public void verifyFooter()throws InterruptedException{
+        AIScreeningPage.verifyFooter();
+    }
+
 }
 
 
