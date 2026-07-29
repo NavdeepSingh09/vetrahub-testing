@@ -17,4 +17,18 @@ Feature: AI Screening Landing Page
     Then User should be navigated to book a demo page
 
 
+  Scenario: Verify "Interview Integrity" Button
+    Given the user navigates back to AI Screening Page from BookDemo
+    When the user scrolls down to the Interview Integrity Section
+    And The user clicks on Interview Integrity
+    Then The user verifies the page title
 
+  Scenario: Verify "High-Volume Roles" is displayed
+    Given the user navigates back to AI Screening Page from Interview
+    When the user scrolls down to Lean Teams section
+    Then Lean Teams section should be displayed
+
+  Scenario: Verify website footer
+    Given the user in on AIScreening Page
+    When the user scroll down to the footer
+    Then the footer  © 2026 should be displayed
