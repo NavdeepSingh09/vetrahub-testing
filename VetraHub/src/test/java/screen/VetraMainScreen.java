@@ -1,6 +1,5 @@
 package screen;
 
-import org.apache.commons.io.filefilter.TrueFileFilter;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -9,16 +8,17 @@ import setup.driver.SeleniumWebDriver;
 public class VetraMainScreen extends SeleniumWebDriver {
     public static void GetNavigateVetraHub() throws InterruptedException{
         getWebDriver().get("https://vetrahub.com/");
-        Thread.sleep(5000);
+        Thread.sleep(1000);
     }
     public static void GetTitle(){
         String title = Title().getText();
-        Assert.assertTrue(title.contains("Practice"));
+        Assert.assertTrue(title.contains("Know why"));
     }
     public static void GetPageHeader(){
         String header1 = Header1().getText();
         Assert.assertTrue(header1.contains("Features"));
         System.out.println(header1);
+
     }
 
 //Web Elements
