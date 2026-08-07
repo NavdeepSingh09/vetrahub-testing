@@ -4,97 +4,114 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import screen.ATSscreen;
-import screen.CheckFooter;
-import screen.JobsBoard;
-import screen.VetraMainScreen;
+import screen.AIScreeningPage;
+import screen.BookDemoPage;
+import screen.InterviewIntegrity;
+import screen.SignupPage;
+
 
 public class MyStepdefs1 {
-    @Given("navigate to VetraHub website")
+    @Given("the user navigates to Vetrahub home page")
     public void navigateToVetraHubWebsite() throws InterruptedException {
-        VetraMainScreen.GetNavigateVetraHub();
+        AIScreeningPage.GetNavigateVetraHub();
     }
 
-    @When("check title of VetraHub main page")
-    public void checkTitleOfVetraHubMainPage() {
-        VetraMainScreen.GetTitle();
+    @When("the user clicks on For Employers")
+    public void clickOnForEmoloyers() throws InterruptedException {
+        AIScreeningPage.clickForEmployers();
     }
 
-    @And("verify header of the page")
-    public void verifyHeaderOfThePage() {
-        VetraMainScreen.GetPageHeader();
+    @And("the user clicks on AI Screening")
+    public void clickOnAiScreening() throws InterruptedException {
+        AIScreeningPage.clickAIScreening();
     }
 
-    @Then("verify Log in is available")
-    public void verifyLogInIsAvailable() {
+    @Then("the AI Screening and Evalution label should be displayed")
+    public void verifyLabel() throws InterruptedException {
+        AIScreeningPage.verifyLabel();
     }
 
-
-    @Given("User is on home page")
-    public void userIsOnHomePage() {
-        ATSscreen.RefreshHomePage();
+    @Given("User is on AI Screening page")
+    public void verifyAIScreeningPage() throws InterruptedException {
+        AIScreeningPage.verifyLabel();
     }
 
-    @When("User click on ATS screen page")
-    public void userClickOnATSscreenPage() throws InterruptedException {
-        ATSscreen.AtsButton();
+    @When("the user clicks on get started free button")
+    public void clickOnGetStarted() throws InterruptedException {
+        AIScreeningPage.clickGetStartedButton();
     }
 
-    @And("Verify header of the page2")
-    public void verifyHeaderOfThePage2() {
-        ATSscreen.AtsTitle();
+    @Then("the user should be navigated to sign up page")
+    public void userOnSignupPage() {
+        SignupPage.verifyTitle();
     }
 
-    @And("Scroll down to login button")
-    public void scrollDownToLOginButton() {
-        ATSscreen.Scrolldown();
+    @Given("the user navigates to AI Screening Page")
+    public void navigatesToAIScreeningPage() throws InterruptedException {
+        AIScreeningPage.navigateBackToAIScreening();
     }
 
-    @Then("verify login button on Ats")
-    public void verifyLoginButtonONAts() {
-        ATSscreen.LoginButton1();
+    @When("the user clicks on Book a demo button")
+    public void clickOnBookDemo() throws InterruptedException {
+        AIScreeningPage.clickOnBookDemo();
     }
 
-    @Given("User is on home page1")
-    public void UserisOnHomePage1() throws InterruptedException {
-        VetraMainScreen.GetNavigateVetraHub();
-        Thread.sleep(2000);
+    @Then("User should be navigated to book a demo page")
+    public void verifyBookDemoTitle() throws InterruptedException {
+        BookDemoPage.verifyBookDemoTitle();
     }
 
-    @When("User scroll down till jobs board")
-    public void UserscrollDownTillJObsaBoard() {
-        JobsBoard.ScrollDown1();
+    @Given("the user navigates back to AI Screening Page from BookDemo")
+    public void navigateBackToAIScreeningPAge() throws InterruptedException {
+        AIScreeningPage.navigateBack();
     }
 
-    @And("User click on jobs board")
-    public void UserclickOnJobsBoard() {
-        JobsBoard.JobBoardpage();
+    @When("the user scrolls down to the Interview Integrity Section")
+    public void scrollDown() throws InterruptedException {
+        AIScreeningPage.scrollDown();
     }
 
-    @Then("User verify page Title2")
-    public void UserverifyPageTitle2() {
-        JobsBoard.JobTitle();
+    @And("The user clicks on Interview Integrity")
+    public void clickOnInterviewIntegrity() throws InterruptedException {
+        AIScreeningPage.clickOnInterviewIntegrity();
     }
 
-    @Given("User is on home page2")
-    public void UserisOnHomePage2() throws InterruptedException {
-        VetraMainScreen.GetNavigateVetraHub();
+    @Then("The user verifies the page title")
+    public void verifyPageTitle() throws InterruptedException {
+        InterviewIntegrity.verifyPageTitle();
     }
 
-    @When("USer scroll down till footer")
-    public void USerScrolldownTillFooter() throws InterruptedException {
-        CheckFooter.ScrollDown1();
+    @Given("the user navigates back to AI Screening Page from Interview")
+    public void navigateBackFromInterview() throws InterruptedException {
+        AIScreeningPage.navigateBackFromInterview();
     }
 
-    @And("user click on one of the footer")
-    public void userClickONoneOftheFooter() {
-        CheckFooter.FooterButton();
+    @When("the user scrolls down to Lean Teams section")
+    public void scrollIntoLeanTeams() throws InterruptedException {
+        AIScreeningPage.scrollIntoLeanTeams();
     }
 
-    @Then("User verify page Title")
-    public void UserVerifyPageTitle() {
-        CheckFooter.FooterTitleCheck();
+    @Then("Lean Teams section should be displayed")
+    public void leanTeamsIsDisplayed() throws InterruptedException {
+        AIScreeningPage.leanTeamsIsDisplayed();
     }
+
+    @Given("the user in on AIScreening Page")
+    public void userIsOnAIScreeningPage() throws InterruptedException {
+        AIScreeningPage.userOnAIScreeningPage();
+    }
+
+    @When("the user scroll down to the footer")
+    public void scrollDownToFooter()throws InterruptedException{
+        AIScreeningPage.scrollDownToFooter();
+    }
+
+    @Then("the footer  © 2026 should be displayed")
+    public void verifyFooter()throws InterruptedException{
+        AIScreeningPage.verifyFooter();
+    }
+
 }
+
 
 
